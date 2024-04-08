@@ -1,0 +1,436 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  background-color: var(--almost-white);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.appContainer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(/bg-top.svg);
+  top: 0;
+  right: -75%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.appContainer::after {
+  content: '';
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background: url(/bg-bottom.svg);
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+}
+
+h1 {
+  color: var(--blue-gray);
+  z-index: 1;
+}
+
+.toggleMenu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  z-index: 1;
+}
+
+.toggleMenu p {
+  color: var(--blue-gray-light);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, var(--gradient1), var(--gradient2));
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--almost-white);
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.slider:hover {
+  cursor: pointer;
+  background: var(--blue-gray-light);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+  transition: .3s;
+}
+
+.annualyPrices, .monthlyPrices {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  width: 1040px;
+  align-items: center;
+  z-index: 1;
+}
+
+.basic, .pro, .master {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.063);
+}
+
+.basic {
+  border-radius: 15px 0 0 15px;
+  height: 90%;
+}
+.pro {
+  border-radius: 15px;
+  height: 100%;
+}
+.master {
+  border-radius: 0 15px 15px 0;
+  height: 90%;
+}
+
+.nameBasic, .nameMaster {
+  font-size: 18px;
+  color: var(--blue-gray);
+}
+
+.namePro {
+  font-size: 18px;
+  color: var(--almost-white);
+}
+
+.priceBasic, .pricePro, .priceMaster {
+  font-size: 72px;
+  color: var(--blue-gray-dark);
+  border-bottom: 1px solid hsla(234, 14%, 74%, 0.568);
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+.featuresBasic, .featuresPro, .featuresMaster {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--blue-gray);
+  width: 100%;
+}
+
+.pricePro, .featuresPro {
+  color: var(--almost-white);
+}
+
+.featuresBasic p,
+.featuresPro p,
+.featuresMaster p {
+  padding-bottom: 16px;
+  border-bottom: 1px solid hsla(234, 14%, 74%, 0.568);
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricePro, .featuresPro p {
+  border-color: hsla(240, 80%, 98%, 0.416);
+}
+
+.basic, .master {
+  background-color: #fff;
+}
+
+.pro {
+  background: linear-gradient(180deg, var(--gradient1), var(--gradient2));
+}
+
+.lmBtn {
+  background: linear-gradient(120deg, var(--gradient1), var(--gradient2));
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: var(--almost-white);
+  font-size: 12px;
+  letter-spacing: 2px;
+  border: 1px solid transparent;
+}
+
+.lmBtn:hover {
+  cursor: pointer;
+  transition: .3s;
+  background: transparent;
+  color: var(--blue-gray-dark);
+  border: 1px solid var(--blue-gray-dark);
+}
+
+.white {
+  background: var(--almost-white);
+  color: var(--gradient2);
+}
+
+.white:hover {
+  border: 1px solid var(--almost-white);
+  color: var(--almost-white);
+}
+
+@media screen and (max-width: 1060px) {
+  .appContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    background-color: var(--almost-white);
+    min-height: 100vh;
+    width: 100%;
+    padding: 32px;
+  }
+
+  .appContainer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(/bg-top.svg);
+    top: -5%;
+    right: -50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .appContainer::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: url(/bg-bottom.svg);
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom left;
+  }
+  
+  h1 {
+    color: var(--blue-gray);
+  }
+  
+  .toggleMenu {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .toggleMenu p {
+    color: var(--blue-gray-light);
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, var(--gradient1), var(--gradient2));
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--almost-white);
+    border-radius: 50%;
+    transition: .3s;
+  }
+  
+  .slider:hover {
+    cursor: pointer;
+    background: var(--blue-gray-light);
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(26px);
+    transition: .3s;
+  }
+  
+  .annualyPrices, .monthlyPrices {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .basic, .pro, .master {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 15px ;
+  }
+  
+  .nameBasic, .nameMaster {
+    font-size: 18px;
+    color: var(--blue-gray);
+  }
+  
+  .namePro {
+    font-size: 18px;
+    color: var(--almost-white);
+  }
+  
+  .priceBasic, .pricePro, .priceMaster {
+    font-size: 72px;
+    color: var(--blue-gray-dark);
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.568);
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+  
+  .featuresBasic, .featuresPro, .featuresMaster {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--blue-gray);
+    width: 100%;
+  }
+  
+  .pricePro, .featuresPro {
+    color: var(--almost-white);
+  }
+  
+  .featuresBasic p,
+  .featuresPro p,
+  .featuresMaster p {
+    padding-bottom: 16px;
+    border-bottom: 1px solid hsla(234, 14%, 74%, 0.568);
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .pricePro, .featuresPro p {
+    border-color: hsla(240, 80%, 98%, 0.416);
+  }
+  
+  .basic, .master {
+    background-color: #fff;
+  }
+  
+  .pro {
+    background: linear-gradient(180deg, var(--gradient1), var(--gradient2));
+  }
+  
+  .lmBtn {
+    background: linear-gradient(120deg, var(--gradient1), var(--gradient2));
+    width: 100%;
+    text-align: center;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: var(--almost-white);
+    font-size: 12px;
+    letter-spacing: 2px;
+    border: 1px solid transparent;
+  }
+  
+  .lmBtn:hover {
+    cursor: pointer;
+    transition: .3s;
+    background: transparent;
+    color: var(--blue-gray-dark);
+    border: 1px solid var(--blue-gray-dark);
+  }
+  
+  .white {
+    background: var(--almost-white);
+    color: var(--gradient2);
+  }
+  
+  .white:hover {
+    border: 1px solid var(--almost-white);
+    color: var(--almost-white);
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 900px) {
+    .appContainer {
+      padding: 96px;
+    }
+}
+
+@media screen and (max-width: 361px) {
+  .priceBasic, 
+  .pricePro, 
+  .priceMaster {
+    font-size: 40px;
+  }
+}
